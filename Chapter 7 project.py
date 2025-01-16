@@ -16,7 +16,7 @@ def roll_die():
     return dice
 
 def first_roll():
-    #accepts no arguements
+        #accepts no arguements
     #uses the variable dice to generate 12 random integers
     #and puts them in a list and returns them
     
@@ -24,9 +24,6 @@ def first_roll():
     index = 0
     
     while index < 11:
-        
-        
-        
     
     
 
