@@ -5,11 +5,11 @@ Gage Boyd, Owen Schroeder, Landon Pfannenstiel
 The program generates 12 random nubmers, finds the most common number and rerolls all other
 numbers until they match the mode.
 
-### Chapter 5 Team Project Flowchart
+### Chapter 7 Team Project Flowchart
 ```mermaid
 graph TD;
     MAIN-->OUTPUT_DICE;
-    MAIN-->ROLL_DIE;
+    FIRST_ROLL-->ROLL_DIE;
     MAIN-->FIRST_ROLL;
     MAIN-->COUNT_FREQUENCY;
     MAIN-->FIND_MODE;
@@ -22,20 +22,36 @@ graph TD;
 
 | `main`             |               |  Gage     |
 | ------------------ | ------------- | ------------ |
-| ` no arguments`    | calls functions and manages variables, outputs who wins or if they lost.  |`calls display_menu`|
+| `no arguments`    | Calls the functions to play the number of games specified |`calls first_roll`|
 ***
-| `display_menu`    |               |    Gage  |
+| `output_dice`    |               |    Gage  |
 | ------------------ | ------------- | ------------ |
-| `no arguments`    | takes input from the user for choice  | `returns choice`|
+| `recieves an argument for dice`    | Ouputs the number of dice in the list  | `returns nothing`|
 ***
-| `names`| | Max|
+| `roll_die`| | Max|
 | ------------------ | ------------- | ------------ |
-|`no arguments`| asks for players names | `returns name1 and name2`|
+|`no arguments`| Rolls a number from 1-6 | `returns the roll`|
 ***
-| `number`| | Gage|
+| `first_roll`| | Gage|
 | ------------------ | ------------- | ------------ |
-| ` no arguments`| generates a random number from 1 - 1000| `returns randomNumber`|
+| `no arguments`| Uses roll die to roll 12 random numbers | `returns 12 random numbers`|
 ***
-| `guessing`| | Max | 
+| `count_frequency`| | Max | 
 | ------------------ | ------------- | ------------ |
-| `name1:string, name2:string, randomNumber:int` | asks players to guess the number | `returns winner:string, turns:int`|
+| `recieves an argument for dice,number` | Accepts a target number and the list of 12, counts the frequency of the number. | `returns the amount_occured`|
+***
+| `find_mode`| | Max | 
+| ------------------ | ------------- | ------------ |
+| `recieves an argument for the list of dice` | Uses count frequency to find the amount each time a number occurs. | `returns the mode`|
+***
+| `list_unmatched_dice`| | Max | 
+| ------------------ | ------------- | ------------ |
+| `Accepts a list of dice` | Finds which dice needs rerolled and returns the indexes of it. | `returns the indexes that need rerolled`|
+***
+| `reroll_one`| | Max | 
+| ------------------ | ------------- | ------------ |
+| `Accepts a list of dice, and an index` | Uses roll_die to roll a die to reroll that index.| `returns a new list with the index rerolled`|
+***
+| `reroll_many`| | Max | 
+| ------------------ | ------------- | ------------ |
+| `Accepts a list of dice` | Calls find_mode, list_unmatched_dice, and reroll_one to reroll each die != to the mode | `returns the list of re-rolled dice.`|
