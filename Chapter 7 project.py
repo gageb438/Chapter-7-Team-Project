@@ -16,7 +16,19 @@ def roll_die():
     return dice
 
 def first_roll():
-    pass
+    #accepts no arguements
+    #uses the variable dice to generate 12 random integers
+    #and puts them in a list and returns them
+    
+    dice = roll_die
+    index = 0
+    
+    while index < 11:
+        
+        
+        
+    
+    
 
 def count_frequency(dice, number):
     pass
