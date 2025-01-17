@@ -24,7 +24,7 @@ def first_roll():
     dice_list = []
     index = 0
     
-    #loop for 12 integers
+    #loop to create 12 integers
     while index < 12:
         
         dice_list.append(roll_die())
